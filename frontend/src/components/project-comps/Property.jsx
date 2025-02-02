@@ -1,30 +1,37 @@
 import React from "react";
-import { Box, Heading, Center, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  HoverCardArrow,
+  HoverCardContent,
+  HoverCardRoot,
+  HoverCardTrigger,
+  VStack,
+} from "@chakra-ui/react";
 import { Avatar } from "../chakra-comps/avatar";
+import PropertyInfo from "./PropertyInfo";
 
-const Property = () => {
+const Property = (props) => {
   return (
-    <Box
-      background="black"
-      padding="4"
-      color="white"
-      borderWidth="2px"
-      borderColor="white"
-    >
-      <Center>
-        <VStack>
-          <Avatar
-            size="xl"
-            name="New York"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/255px-Flag_of_the_United_States_%28Pantone%29.svg.png"
-          />
-          <Heading>New York</Heading>
-          <Heading paddingTop="5%" color="gray">
-            400 $
-          </Heading>
-        </VStack>
-      </Center>
-    </Box>
+    <HoverCardRoot usePortal={true}>
+      <HoverCardTrigger>
+        <Box background="black" padding="4" color="white" width="5vw">
+          <VStack borderWidth="2px" borderColor="white" padding={"2vh 2vw"}>
+            <Avatar size="md" name={props.name} src={props.imgURL} />
+            <Heading size="md" textAlign="center">
+              {props.name}
+            </Heading>
+            <Heading paddingTop="5%" color="gray" size="sm">
+              {props.price}
+            </Heading>
+          </VStack>
+        </Box>
+      </HoverCardTrigger>
+      <HoverCardContent width="12.5vw">
+        <HoverCardArrow />
+        <PropertyInfo />
+      </HoverCardContent>
+    </HoverCardRoot>
   );
 };
 
