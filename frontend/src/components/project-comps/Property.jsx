@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  VStack,
-} from "@chakra-ui/react";
-import { Avatar } from "../chakra-comps/avatar";
+import { Box, Heading, VStack } from "@chakra-ui/react";
 import PropertyInfo from "./PropertyInfo";
 import {
   PopoverArrow,
   PopoverBody,
   PopoverContent,
   PopoverRoot,
-  PopoverTrigger
+  PopoverTrigger,
 } from "../chakra-comps/popover";
 
 const Property = (props) => {
@@ -19,14 +14,19 @@ const Property = (props) => {
     <>
       <PopoverRoot>
         <PopoverTrigger asChild>
-          <Box background="black" color="white" width="5vw" border={'1px solid white'}>
-            <VStack padding={"2vh 2vw"}>
-              <Avatar size="xs" name={props.name} src={props.imgURL} />
-              <Heading size="xs" textAlign="center">
+          <Box
+            background="#0e0238"
+            color="white"
+            width="5vw"
+            border={"1px solid white"}
+            borderRadius="1%"
+          >
+            <VStack padding={"1vh 1vw"}>
+              <Heading size="sm" textAlign={"center"}>
                 {props.name}
               </Heading>
-              <Heading paddingTop="5%" color="gray" size="sm">
-                {props.price}
+              <Heading color="gray" size="sm">
+                {props.price}$
               </Heading>
             </VStack>
           </Box>
@@ -34,12 +34,10 @@ const Property = (props) => {
         <PopoverContent>
           <PopoverArrow />
           <PopoverBody>
-            {/* <PopoverTitle fontWeight="medium">Naruto Form</PopoverTitle> */}
             <PropertyInfo />
           </PopoverBody>
         </PopoverContent>
       </PopoverRoot>
-
     </>
   );
 };
