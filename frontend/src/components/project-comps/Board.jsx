@@ -10,18 +10,19 @@ const Board = () => {
                 templateRows="repeat(11, 1fr)"
                 height={'100vh'}
             >
-                {/* First row */}
-                <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
-                {/* <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}> */}
-                    
-                {/* </GridItem> */}
                 <Property
-                        key={4}
-                        name="New York"
-                        price={400}
-                        imgURL={
-                            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/255px-Flag_of_the_United_States_%28Pantone%29.svg.png"
-                        }
+                    key={10}
+                    name="START"
+                    price=""
+                    imgURL={'https://image.similarpng.com/file/similarpng/very-thumbnail/2021/04/Green-arrow-icon-isolated-on-transparent-background-PNG.png'}
+                />
+                <Property
+                    key={4}
+                    name="New York"
+                    price={400}
+                    imgURL={
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/255px-Flag_of_the_United_States_%28Pantone%29.svg.png"
+                    }
                 />
                 <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
                 <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
@@ -31,7 +32,7 @@ const Board = () => {
                 <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
                 <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
                 <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
-                <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem>
+                <Property key={5} name="Passing by" price="" imgURL="https://i.postimg.cc/BQG6xJXX/image.png" />
 
                 {/* both columns alternating */}
                 <GridItem background="green" border={'2px solid black'} borderRadius={'10%'}></GridItem> {/* left column */}
