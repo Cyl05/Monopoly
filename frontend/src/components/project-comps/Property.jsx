@@ -15,8 +15,8 @@ const Property = (props) => {
   return (
     <HoverCardRoot usePortal={true}>
       <HoverCardTrigger>
-        <Box background="black" padding="4" color="white" width="5vw">
-          <VStack borderWidth="2px" borderColor="white" padding={"2vh 2vw"}>
+        <Box background="black" color="white" width="5vw">
+          <VStack padding={"2vh 2vw"}>
             <Avatar size="md" name={props.name} src={props.imgURL} />
             <Heading size="md" textAlign="center">
               {props.name}
