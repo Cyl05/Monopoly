@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, VStack } from "@chakra-ui/react";
-import PropertyInfo from "./PropertyInfo";
+import UtilitiesInfo from "./UtilitiesInfo";
 import {
   PopoverArrow,
   PopoverBody,
@@ -9,7 +9,7 @@ import {
   PopoverTrigger,
 } from "../chakra-comps/popover";
 
-const Property = (props) => {
+const Utility = (props) => {
   return (
     <>
       <PopoverRoot>
@@ -26,7 +26,7 @@ const Property = (props) => {
         <PopoverContent>
           <PopoverArrow />
           <PopoverBody>
-            <PropertyInfo {...props} />
+            <UtilitiesInfo {...props} />
           </PopoverBody>
         </PopoverContent>
       </PopoverRoot>
@@ -34,4 +34,4 @@ const Property = (props) => {
   );
 };
 
-export default Property;
+export default Utility;

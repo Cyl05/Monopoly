@@ -4,7 +4,7 @@ import { GiWindowBars } from "react-icons/gi";
 
 const Jail = () => {
   return (
-    <Box background={"black"} border={"1px solid white"}>
+    <Box background={"black"}>
       <VStack padding={"1vh 1vw"}>
         <Icon fontSize="4vh" textAlign={"center"}>
           <GiWindowBars />
