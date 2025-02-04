@@ -7,7 +7,7 @@ const PropertyInfo = (props) => {
   return (
     <VStack align="stretch">
       <Heading textAlign={"center"} paddingBottom={"1vw"}>
-        New York
+        {props.name}
       </Heading>
       <VStack align="stretch" textStyle="xs" gap="2vh">
         <HStack justifyContent="space-between" textStyle="sm" color="#7af0c7">
@@ -16,18 +16,18 @@ const PropertyInfo = (props) => {
         </HStack>
         <HStack justifyContent="space-between">
           <Text fontSize="2vh">Rent</Text>
-          <Text>10$</Text>
+          <Text>{props.rent[0]}</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <HouseIcon />
-          <Text>20$</Text>
+          <Text>{props.rent[1]}</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <HStack>
             <HouseIcon />
             <HouseIcon />
           </HStack>
-          <Text>30$</Text>
+          <Text>{props.rent[2]}</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <HStack>
@@ -35,7 +35,7 @@ const PropertyInfo = (props) => {
             <HouseIcon />
             <HouseIcon />
           </HStack>
-          <Text>40$</Text>
+          <Text>{props.rent[3]}</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <HStack>
@@ -44,11 +44,11 @@ const PropertyInfo = (props) => {
             <HouseIcon />
             <HouseIcon />
           </HStack>
-          <Text>50$</Text>
+          <Text>{props.rent[4]}</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <HotelIcon />
-          <Text>100$</Text>
+          <Text>{props.rent[5]}</Text>
         </HStack>
       </VStack>
     </VStack>

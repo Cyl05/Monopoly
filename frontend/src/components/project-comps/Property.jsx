@@ -34,7 +34,7 @@ const Property = (props) => {
         <PopoverContent>
           <PopoverArrow />
           <PopoverBody>
-            <PropertyInfo />
+            <PropertyInfo {...props} />
           </PopoverBody>
         </PopoverContent>
       </PopoverRoot>

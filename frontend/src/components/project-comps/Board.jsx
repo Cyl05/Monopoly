@@ -22,6 +22,7 @@ const Board = () => {
           imgURL={
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/255px-Flag_of_the_United_States_%28Pantone%29.svg.png"
           }
+          rent={[10, 20, 30, 40, 50]}
         />
         <GridItem
           background="green"
