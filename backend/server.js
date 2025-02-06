@@ -1,12 +1,19 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
 import Property from "./models/property.model.js";
+import cors from "cors";
 import env from "dotenv";
 
 env.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const corsOptions = {
+    origin: 'http://localhost:5173', // Your frontend origin
+    credentials: true // Allow credentials (cookies, authorization headers, etc.)
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
@@ -17,7 +24,7 @@ app.get("/", (req, res) => {
 // retrieve all properties
 app.get("/properties", async (req, res) => {
 	try {
-		const properties = await Property.find();
+		const properties = await Property.find().sort({ id: 1 });
 		res.status(200).json(properties);
 	} catch (error) {
 		console.log(error.message);
@@ -57,7 +64,7 @@ app.post("/properties", async (req, res) => {
 });
 
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
 	connectDB();
 	console.log(`Server started at http://localhost:${process.env.PORT}`);
 });

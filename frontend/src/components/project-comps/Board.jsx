@@ -7,6 +7,7 @@ import Start from "./Start";
 import Jail from "./Jail";
 import Airport from "./Airport";
 import Utility from "./Utilties";
+import Tax from "./Tax.jsx";
 import Treasure from "./Treasure";
 import Surprise from "./Surprise";
 import { generateBoard } from "../../board.js";
@@ -19,16 +20,15 @@ const Board = () => {
     console.log(response);
     setProperties(response);
   }
-  
-  const nonProps = {2: "treasure", 7: "surprise", 18: "surprise", 24: "treasure", 25: "treasure", 38: "surprise", 4: "income", 14: "luxury", 12: "center"};
 
-
+  const nonProps = { 2: "treasure", 7: "surprise", 18: "surprise", 24: "treasure", 25: "treasure", 38: "surprise", 4: "income", 14: "luxury", 12: "center", 0: "Start", 10: "Jail", 30: "Gotojail", 40: "Vacation" };
 
   React.useEffect(() => {
     getProperties();
   }, []);
 
   return (
+    properties &&
     <Box h={"100vh"} w={"60vw"}>
       <Grid
         templateColumns="repeat(11, 1fr)"
@@ -39,12 +39,13 @@ const Board = () => {
           Array.from({ length: 41 }, (_, i) => {
             const property = properties.find((property) => property.id == i);
             const otherItem = nonProps[i];
+            console.log(property);
 
             if (property) {
-              return <Property 
+              return <Property
                 key={i}
-                name={property.name}
-                price={property.price}
+                name={property.city}
+                price={property.cost}
                 rent={property.rent}
               />
             } else {
@@ -57,6 +58,22 @@ const Board = () => {
                   return <Tax type="%10" />
                 case "luxury":
                   return <Tax type="$75" />
+                case "Start":
+                  return <Start />
+                case "Jail":
+                  return <Jail />
+                case "Gotojail":
+                  return <GoToJail />
+                case "Vacation":
+                  return <Vacation />
+                case "center":
+                  return <GridItem
+                    colSpan={9}
+                    rowSpan={9}
+                    background="blue"
+                    borderRadius={"2%"}
+                    border={"2px solid black"}
+                  ></GridItem>
               }
             }
           })
