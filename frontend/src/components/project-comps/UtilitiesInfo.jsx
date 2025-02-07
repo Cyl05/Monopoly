@@ -6,6 +6,7 @@ import WaterWorksIcon from "./WaterWorksIcon";
 const UtilitiesInfo = (props) => {
   return (
     <VStack align="stretch">
+      <Text textAlign={"center"}>{props.name == "Electric Company" ? <BulbIcon /> : <WaterWorksIcon />}</Text>
       <Heading textAlign={"center"} paddingBottom={"1vw"}>
         {props.name}
       </Heading>

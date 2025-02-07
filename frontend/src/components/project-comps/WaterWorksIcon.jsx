@@ -1,10 +1,10 @@
 import React from "react";
 import { Icon } from "@chakra-ui/react";
-import { GiWaterTower } from "react-icons/gi";
+import { GiTap } from "react-icons/gi";
 
 const WaterWorksIcon = () => (
   <Icon fontSize="2vh">
-    <GiWaterTower />
+    <GiTap />
   </Icon>
 );
 

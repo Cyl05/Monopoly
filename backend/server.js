@@ -32,6 +32,16 @@ app.get("/properties", async (req, res) => {
 	}
 });
 
+app.get("/deleteProps", async (req, res) => {
+	try {
+		await MyModel.deleteMany({});
+		res.status(200).json({ message: "Cleared collection" });
+	} catch (error) {
+		console.log(error.message);
+		res.status(500).json({ message: "Internal Server Error" });
+	}
+})
+
 // insert property to mongodb
 app.post("/property", async (req, res) => {
 	const property = req.body;
