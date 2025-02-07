@@ -1,7 +1,8 @@
 import React from "react";
-import { HStack, VStack, Heading, Text } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Text, Icon } from "@chakra-ui/react";
 import HotelIcon from "./HotelIcon";
 import HouseIcon from "./HouseIcon";
+import { MdAttachMoney } from "react-icons/md";
 
 const PropertyInfo = (props) => {
   return (
@@ -51,6 +52,22 @@ const PropertyInfo = (props) => {
           <Text>{props.rent[5]}</Text>
         </HStack>
       </VStack>
+      <HStack justifyContent="space-between" marginTop="3vh" color="#94d1f7">
+        <VStack>
+          <Icon fontSize="2vh">
+            <MdAttachMoney />
+          </Icon>
+          <Text>{props.price}</Text>
+        </VStack>
+        <VStack>
+          <HouseIcon />
+          <Text>200$</Text>
+        </VStack>
+        <VStack>
+          <HotelIcon />
+          <Text>200$</Text>
+        </VStack>
+      </HStack>
     </VStack>
   );
 };
