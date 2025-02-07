@@ -35,6 +35,7 @@ class Property {
     this.housesOwned = 0;
     this.hotelsOwned = 0;
     this.rents = property.rents;
+    this.setOwned = false;
   }
 
   getRent() {
@@ -43,8 +44,23 @@ class Property {
 
   mortgage() {
     this.isMortgaged = true;
-    Game.players[this.owner].cash += price / 2;
-    Game.players[this.owner].mortgagedProperties.add(this.id);
+    game.players[this.owner].cash += price / 2;
+    game.players[this.owner].mortgagedProperties.add(this.id);
+  }
+
+  unMortgage() {
+    //check if cash is enough
+    this.isMortgaged = false;
+    game.players[this.owner].cash -= price / 2 + 5;
+    game.players[this.owner].mortgagedProperties.remove(this.id);
+  }
+
+  sellBuilding() {
+    if (this.hotelsOwned > 0) {
+      this.hotelsOwned--;
+    } else if (this.housesOwned > 0) {
+      this.housesOwned--;
+    }
   }
 }
 
