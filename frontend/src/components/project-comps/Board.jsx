@@ -17,7 +17,6 @@ const Board = () => {
 
   async function getProperties() {
     const response = await generateBoard();
-    console.log(response);
     setProperties(response);
   }
 
@@ -39,9 +38,23 @@ const Board = () => {
           Array.from({ length: 41 }, (_, i) => {
             const property = properties.find((property) => property.id == i);
             const otherItem = nonProps[i];
-            console.log(property);
 
             if (property) {
+              if (property.flag == "airport") {
+                return <Airport
+                  key={i}
+                  name={property.city}
+                  price={property.cost}
+                  rent={property.rent}
+                />
+              } else if (property.flag == "utility") {
+                return <Utility
+                  key={i}
+                  name={property.city}
+                  price={property.cost}
+                  rent={property.rent}
+                />
+              }
               return <Property
                 key={i}
                 name={property.city}
@@ -51,23 +64,24 @@ const Board = () => {
             } else {
               switch (otherItem) {
                 case "treasure":
-                  return <Treasure />
+                  return <Treasure key={i} />
                 case "surprise":
-                  return <Surprise />
+                  return <Surprise key={i} />
                 case "income":
-                  return <Tax type="%10" />
+                  return <Tax type="%10" key={i} />
                 case "luxury":
-                  return <Tax type="$75" />
+                  return <Tax type="$75" key={i} />
                 case "Start":
-                  return <Start />
+                  return <Start key={i} />
                 case "Jail":
-                  return <Jail />
+                  return <Jail key={i} />
                 case "Gotojail":
-                  return <GoToJail />
+                  return <GoToJail key={i} />
                 case "Vacation":
-                  return <Vacation />
+                  return <Vacation key={i} />
                 case "center":
-                  return <GridItem
+                  return <GridItem 
+                    key={i}
                     colSpan={9}
                     rowSpan={9}
                     background="blue"
