@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, VStack } from "@chakra-ui/react";
+import { Heading, VStack, Flex } from "@chakra-ui/react";
 import {
   PopoverArrow,
   PopoverBody,
@@ -15,19 +15,17 @@ const Airport = (props) => {
     <PopoverRoot>
       <PopoverTrigger asChild>
         <VStack padding={"1vh 1vw"}>
-          <Heading size="sm"
-            textAlign="center"
-            whiteSpace="nowrap"
-            overflow="hidden"
-            textOverflow="ellipsis"
-            maxWidth="70%">
-            {props.name}
-          </Heading>
+          <Flex align="center">
+            <Heading size="sm" textAlign="center" display="inline">
+              {props.name}
+            </Heading>
+            <FaPlane style={{ marginLeft: "5px" }} />
+          </Flex>
           <Heading color="gray" size="sm">
             {props.price}$
           </Heading>
-          <FaPlane />
         </VStack>
+
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />

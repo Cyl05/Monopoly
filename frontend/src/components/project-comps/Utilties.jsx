@@ -17,13 +17,7 @@ const Utility = (props) => {
       <PopoverRoot>
         <PopoverTrigger asChild>
           <VStack padding={"1vh 1vw"}>
-            {props.name == "Electric Company" ? <BulbIcon /> : <WaterWorksIcon />}
-            <Heading size="sm"
-              textAlign="center"
-              whiteSpace="nowrap"
-              overflow="hidden"
-              textOverflow="ellipsis"
-              maxWidth="70%">
+            <Heading size="sm" textAlign={"center"}>
               {props.name}
             </Heading>
             <Heading color="gray" size="sm">
