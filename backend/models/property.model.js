@@ -33,6 +33,13 @@ const propertySchema = new mongoose.Schema({
     rent: {
         type: [Number], 
         required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    buildingPrice: {
+        type: Number
     }
 });
 

@@ -14,7 +14,7 @@ const Property = (props) => {
     <>
       <PopoverRoot>
         <PopoverTrigger asChild>
-          <VStack padding={"1vh 1vw"}>
+          <VStack padding={"1vh 1vw"} background={props.color}>
             <Heading size="sm" textAlign={"center"}>
               {props.name}
             </Heading>

@@ -5,6 +5,7 @@ import HouseIcon from "./HouseIcon";
 import { MdAttachMoney } from "react-icons/md";
 
 const PropertyInfo = (props) => {
+  console.log(props.buildingPrice);
   return (
     <VStack align="stretch">
       <Heading textAlign={"center"} paddingBottom={"1vw"}>
@@ -61,11 +62,11 @@ const PropertyInfo = (props) => {
         </VStack>
         <VStack>
           <HouseIcon />
-          <Text>200$</Text>
+          <Text>${props.buildingPrice}</Text>
         </VStack>
         <VStack>
           <HotelIcon />
-          <Text>200$</Text>
+          <Text>${props.buildingPrice}</Text>
         </VStack>
       </HStack>
     </VStack>

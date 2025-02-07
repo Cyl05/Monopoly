@@ -32,9 +32,9 @@ app.get("/properties", async (req, res) => {
 	}
 });
 
-app.get("/deleteProps", async (req, res) => {
+app.get("/deleteprops", async (req, res) => {
 	try {
-		await MyModel.deleteMany({});
+		await Property.deleteMany({});
 		res.status(200).json({ message: "Cleared collection" });
 	} catch (error) {
 		console.log(error.message);

@@ -60,6 +60,8 @@ const Board = () => {
                 name={property.city}
                 price={property.cost}
                 rent={property.rent}
+                color={property.color}
+                buildingPrice={property.buildingPrice}
               />
             } else {
               switch (otherItem) {
