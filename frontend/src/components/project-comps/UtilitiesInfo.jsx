@@ -17,18 +17,18 @@ const UtilitiesInfo = (props) => {
 
         <HStack justifyContent="space-between">
           <BulbIcon />
-          <Text>{props.rent[0]}</Text>
+          <Text>${props.rent[0]} * Dice Roll</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <WaterWorksIcon />
-          <Text>{props.rent[0]}</Text>
+          <Text>${props.rent[0]} * Dice Roll</Text>
         </HStack>
         <HStack justifyContent="space-between">
           <HStack>
             <BulbIcon />
             <WaterWorksIcon />
           </HStack>
-          <Text>{props.rent[1]}</Text>
+          <Text>${props.rent[1]} * Dice Roll</Text>
         </HStack>
       </VStack>
     </VStack>
