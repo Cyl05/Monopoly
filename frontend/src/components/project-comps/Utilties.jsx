@@ -15,7 +15,12 @@ const Utility = (props) => {
       <PopoverRoot>
         <PopoverTrigger asChild>
           <VStack padding={"1vh 1vw"}>
-            <Heading size="sm" textAlign={"center"}>
+            <Heading size="sm"
+                        textAlign="center"
+                        whiteSpace="nowrap"
+                        overflow="hidden"
+                        textOverflow="ellipsis"
+                        maxWidth="70%">
               {props.name}
             </Heading>
             <Heading color="gray" size="sm">
