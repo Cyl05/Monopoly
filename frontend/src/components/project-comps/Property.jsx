@@ -8,6 +8,7 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from "../chakra-comps/popover";
+import Player from './Player.jsx';
 
 const Property = (props) => {
   return (
@@ -18,6 +19,7 @@ const Property = (props) => {
             <Heading size="sm" textAlign={"center"}>
               {props.name}
             </Heading>
+            {props.player}
             <Heading color="gray" size="sm">
               {props.price}$
             </Heading>

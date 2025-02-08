@@ -11,6 +11,7 @@ import Tax from "./Tax.jsx";
 import Treasure from "./Treasure";
 import Surprise from "./Surprise";
 import { generateBoard } from "../../board.js";
+import Player from "./Player.jsx";
 
 const Board = () => {
   const [properties, setProperties] = React.useState();
@@ -29,6 +30,7 @@ const Board = () => {
   return (
     properties &&
     <Box h={"100vh"} w={"60vw"}>
+      {/* <Player /> */}
       <Grid
         templateColumns="repeat(11, 1fr)"
         templateRows="repeat(11, 1fr)"
@@ -62,6 +64,7 @@ const Board = () => {
                 rent={property.rent}
                 color={property.color}
                 buildingPrice={property.buildingPrice}
+                player={<Player />}
               />
             } else {
               switch (otherItem) {
