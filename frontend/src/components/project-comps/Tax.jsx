@@ -5,7 +5,7 @@ import { BiMoneyWithdraw } from "react-icons/bi";
 const Tax = (props) => (
   <Box background="gray">
     <VStack padding={"1vh 1vw"}>
-      <Icon fontSize="4vh" textAlign={"center"}>
+      <Icon fontSize="3.75vh" textAlign={"center"}>
         <BiMoneyWithdraw />
       </Icon>
       <Heading size="sm">{props.type}</Heading>

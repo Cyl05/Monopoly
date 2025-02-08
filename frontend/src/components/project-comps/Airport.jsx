@@ -9,6 +9,7 @@ import {
 } from "../chakra-comps/popover";
 import AirportInfo from "./AirportInfo";
 import { FaPlane } from "react-icons/fa";
+import Player from "./Player";
 
 const Airport = (props) => {
   return (
@@ -21,11 +22,11 @@ const Airport = (props) => {
             </Heading>
             <FaPlane style={{ marginLeft: "5px" }} />
           </Flex>
+          <Player />
           <Heading color="gray" size="sm">
             {props.price}$
           </Heading>
         </VStack>
-
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />

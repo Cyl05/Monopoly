@@ -5,7 +5,7 @@ import { PiTreasureChestDuotone } from "react-icons/pi";
 const Treasure = () => (
   <Box background="#993d08">
     <VStack padding={"1vh 1vw"}>
-      <Icon fontSize="4vh" textAlign={"center"}>
+      <Icon fontSize="3.5vh" textAlign={"center"}>
         <PiTreasureChestDuotone />
       </Icon>
       <Heading size="sm">Treasure</Heading>
